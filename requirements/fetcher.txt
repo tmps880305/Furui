@@ -1,0 +1,1 @@
+# Fetcher 相依套件：需鎖定版本與 hash（--require-hashes），盡量精簡；變更需特別標註。

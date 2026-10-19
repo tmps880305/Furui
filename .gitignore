@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.pytest_cache/
+.DS_Store
+build/dist/
+*.zip
+.ruff_cache/
+.idea/
+.vscode/
+.claude/settings.local.json

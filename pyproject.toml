@@ -1,0 +1,35 @@
+[project]
+name = "daily-news-collector"
+version = "0.1.0"
+description = "Daily news collector running on AWS Lambda (see docs/ARCHITECTURE.md)"
+requires-python = ">=3.12,<3.13"
+# 各 Lambda 的 runtime 相依套件鎖定在 requirements/*.txt（含 hash），不放在這裡。
+dependencies = []
+
+[dependency-groups]
+# 本機開發與測試用，不會打包進 Lambda。安裝：pip install --group dev
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+    "httpx>=0.27",
+    "pydantic>=2.7",
+    "pyyaml>=6",
+    "boto3>=1.34",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106"]

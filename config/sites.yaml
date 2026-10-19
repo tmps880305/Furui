@@ -1,0 +1,3 @@
+# 站點設定（不含任何機密）。目標網站待決，見 docs/ARCHITECTURE.md 第 11 節。
+# 新增網站時需同時新增 adapter（src/fetcher/sites/{site_id}.py）與 fixture 測試。
+sites: {}
